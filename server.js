@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const articlesRouter = require('./routes/articles')
 const Article = require('./models/article')
+const methodOveride = require('method-override')
 const app = express()
 
 
@@ -13,6 +14,7 @@ mongoose.set('useCreateIndex', true)
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
+app.use(methodOveride('_method'))
 
 
 app.get('/', async (req,res) => {
