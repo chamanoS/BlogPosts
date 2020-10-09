@@ -19,7 +19,7 @@ router.get('/:slug', async (req,res)=>{
 
 router.post('/', async (req,res, next) => {
    req.article = new Article()
-   next()
+   next()   
 }, saveArticleAndRedirect('new'))
 
 router.put('/:id', async (req,res, next) => {
